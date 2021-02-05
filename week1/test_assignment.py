@@ -2,6 +2,7 @@ import os
 import re
 import json
 import pytest
+import pets
 
 STUDENT_NUMBER_PATTERN = re.compile(r's\d{7}$')
 
@@ -49,3 +50,8 @@ class TestText:
         with open('me.txt') as f:
             text = f.read()
         assert text.strip(), 'me.txt is empty'
+
+class TestPY:
+    def test_greeting(self):
+        x = pets.Dog('dog')
+        assert x.greeting(), 'Value for greeting is empty'
