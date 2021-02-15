@@ -49,3 +49,19 @@ class TestWordSearch:
             'NAGALMEN', 'BABYUITZET', 'BABY', 'UITZET', 'OMNIBUS', 'STIL',
             'STILTE', 'AFFAIRE', 'FAIR', 'ZEKER', 'HERSENS', 'EDEL', 'EDELE',
             'BEDSTEDE'}
+    
+    def test_advanced_search1(self):
+        words = list(wordsearch.solve('puzzle1.txt', 'words.json', advanced=True))
+        assert len(words) == 9
+        assert set(words) == {
+            'WATER', 'KALK', 'KLAK', 'KLEM', 'SINAS', 'MELK', 'INAS', 'KOFFIE', 'CASSIS'}
+    
+    def test_advanced_search2(self):
+        words = list(wordsearch.solve('puzzle2.txt', 'words.json', advanced=True))
+        assert len(words) == 33
+        assert set(words) == {
+            'STIL', 'HERSENS', 'BEDSTEDE', 'GALMEN', 'RITS', 'OMNIBUS',
+            'ZONNEBRIL', 'KLEI', 'NEER', 'BABYUITZET', 'UITZET', 'BRIL', 'MENISCUS', 
+            'NFWO', 'STILTE', 'EDEL', 'VIER', 'EDELE', 'FORT', 'FAIR',
+            'GETROFFEN', 'AFFAIRE', 'RAIO', 'TIEN', 'ZEKER', 'SLEE', 'OVER',
+            'NAGALMEN', 'BABY', 'KAAS', 'NEGEN', 'NEGEN', 'GALM'}
