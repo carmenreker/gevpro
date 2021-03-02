@@ -4,12 +4,14 @@ import sys
 
 
 def splitter(text):
+    ''' Splits the text into individual sentences on each line. '''
     pat = re.compile(r'([\"\'\-]?[A-Z0-9][^\.!?]*[\.!?][\"\']?)')
     split = pat.findall(text)
     return tokenizer(split)
 
 
 def tokenizer(splittext):
+    ''' Tokenizes the text based on words and punctuations. '''
     cleantext = []
     tokens = re.compile(r"[\w]*-[\w]*|[\w]+'n|[\w]+'s|[\w]+|[^\s\w]")
     for line in splittext:
